@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: splunk-integration
+  profiles:
+    active: dev
+
+logging:
+  level:
+    root: info
