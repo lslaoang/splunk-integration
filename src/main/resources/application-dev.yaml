@@ -1,0 +1,3 @@
+splunk:
+  url: http://localhost:8088
+  token: 04f64977-1fb9-416f-a1b8-e0a2bf09dd47

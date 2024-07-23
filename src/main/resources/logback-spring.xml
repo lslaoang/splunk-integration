@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProperty scope="context" name="splunkUrl" source="splunk.url"/>
+    <springProperty scope="context" name="splunkToken" source="splunk.token"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <target>SYSTEM_OUT</target>
+        <encoder>
+            <pattern>%cyan(%d{ISO8601}) %highlight(%-5level) [%blue(%thread)] %yellow(%logger{10}): %msg%n%throwable</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="splunk-appender" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
+        <url>${splunkUrl}</url>
+        <token>${splunkToken}</token>
+        <host>localhost</host>
+        <index>page_controller</index>
+        <type>raw</type>
+        <sourcetype>log4j</sourcetype>
+        <messageFormat>text</messageFormat>
+        <disableCertificateValidation>true</disableCertificateValidation>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%m</pattern>
+        </layout>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="console" />
+        <appender-ref ref="splunk-appender" />
+    </root>
+
+</configuration>
