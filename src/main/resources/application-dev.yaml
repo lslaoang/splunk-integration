@@ -1,5 +1,4 @@
 splunk:
-  url: https://prd-p-kpoh9.splunkcloud.com:8088/services/collector
-  token: 57249575-2f69-4d9a-aca5-49224ec4107c
-  host: https://prd-p-kpoh9.splunkcloud.com
+  url: "https://prd-p-kpoh9.splunkcloud.com:8088"
+  token: "57249575-2f69-4d9a-aca5-49224ec4107c"
   index: splunk-web

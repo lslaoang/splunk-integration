@@ -1,5 +1,5 @@
 
 splunk:
-  url: http://localhost:8088/services/collector
+  url: "http://localhost:8088"
   token: 79ffe6ca-33fd-4028-895a-91c493a377fc
   index: splunk-web-l

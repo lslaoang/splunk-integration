@@ -17,12 +17,11 @@
         <url>${splunkUrl}</url>
         <token>${splunkToken}</token>
 <!--        <host>${splunkHost}</host>-->
-<!--        <index>page_controller</index>-->
         <index>${splunkIndex}</index>
         <type>raw</type>
         <sourcetype>log4j</sourcetype>
         <messageFormat>text</messageFormat>
-<!--        <disableCertificateValidation>true</disableCertificateValidation>-->
+        <disableCertificateValidation>true</disableCertificateValidation>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>%m</pattern>
         </layout>
