@@ -1,3 +1,5 @@
 splunk:
-  url: http://localhost:8088
-  token: 04f64977-1fb9-416f-a1b8-e0a2bf09dd47
+  url: https://prd-p-kpoh9.splunkcloud.com:8088/services/collector
+  token: 57249575-2f69-4d9a-aca5-49224ec4107c
+  host: https://prd-p-kpoh9.splunkcloud.com
+  index: splunk-web

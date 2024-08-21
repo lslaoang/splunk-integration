@@ -2,7 +2,9 @@
 <configuration>
 
     <springProperty scope="context" name="splunkUrl" source="splunk.url"/>
+    <springProperty scope="context" name="splunkHost" source="splunk.host"/>
     <springProperty scope="context" name="splunkToken" source="splunk.token"/>
+    <springProperty scope="context" name="splunkIndex" source="splunk.index"/>
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <target>SYSTEM_OUT</target>
@@ -14,12 +16,13 @@
     <appender name="splunk-appender" class="com.splunk.logging.HttpEventCollectorLogbackAppender">
         <url>${splunkUrl}</url>
         <token>${splunkToken}</token>
-        <host>localhost</host>
-        <index>page_controller</index>
+<!--        <host>${splunkHost}</host>-->
+<!--        <index>page_controller</index>-->
+        <index>${splunkIndex}</index>
         <type>raw</type>
         <sourcetype>log4j</sourcetype>
         <messageFormat>text</messageFormat>
-        <disableCertificateValidation>true</disableCertificateValidation>
+<!--        <disableCertificateValidation>true</disableCertificateValidation>-->
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>%m</pattern>
         </layout>
